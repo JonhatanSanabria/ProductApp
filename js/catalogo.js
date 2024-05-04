@@ -1,7 +1,8 @@
 const createProductCard = (productObject) => {
-    let {article, brand, category, content, description, picture, price, stock} = productObject
+    let {article, brand, category, content, description, picture, price, stock, key} = productObject
     let cardHTML = 
 `<div class="col">
+<a href="../views/detalle.html?productKey=${key}">
     <div class="card-body">
         <div class="card mb-3">
             <div class="row g-0">
@@ -30,6 +31,7 @@ const createProductCard = (productObject) => {
             </div>
           </div>
     </div>
+    </a>
 </div>`
 return cardHTML;
 }
