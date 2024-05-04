@@ -1,11 +1,11 @@
 const createProductCard = (productObject) => {
     let {article, brand, category, content, description, picture, price, stock} = productObject
     let cardHTML = 
-    `<div class="col-12">
-    <div class="row row-cols-1 row-cols-md-2 g-3">
+`<div class="col">
+    <div class="card-body">
         <div class="card mb-3">
             <div class="row g-0">
-              <div class="col-md-4">
+              <div class="col-md-3">
                 <img src="${picture}" 
                 style="
                 width: 100%;
