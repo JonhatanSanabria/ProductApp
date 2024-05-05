@@ -1,3 +1,5 @@
+import {createProductCard} from "../js/modules/productsApi.js"
+
 let createProductBtn = document.getElementById("create-product-btn")
 createProductBtn.addEventListener("click", async () => {
     let fields = document.querySelectorAll("#create-product-form input")
@@ -17,11 +19,3 @@ createProductBtn.addEventListener("click", async () => {
     console.log(savedProduct)
 })
 
-const createProductCard = async (productObject) => {
-    let response = await fetch(`https://javascript33g-cd62a-default-rtdb.firebaseio.com/Products/.json`, {
-        method: 'POST',
-        body: JSON.stringify(productObject)
-    })
-    let data = await response.json()
-    return data
-}

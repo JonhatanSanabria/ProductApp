@@ -1,3 +1,5 @@
+import { fetchAllProducts } from "./modules/productsApi.js";
+
 const createProductCard = (productObject) => {
     let {article, brand, category, content, description, picture, price, stock, key} = productObject
     let cardHTML = 
@@ -34,14 +36,6 @@ const createProductCard = (productObject) => {
     </a>
 </div>`
 return cardHTML;
-}
-
-const fetchAllProducts = async () => {
-    let response = await fetch(`https://javascript33g-cd62a-default-rtdb.firebaseio.com/Products/.json`)
-    let data = await response.json()
-    let keys = Object.keys(data)
-    let productsArray = keys.map((key) => ({...data[key], key}))
-    return productsArray
 }
 
 const printProducts = (productsArray, wrapperId) => {

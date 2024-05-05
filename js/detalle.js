@@ -1,3 +1,5 @@
+import { fetchProductByKey } from "./modules/productsApi.js"
+
 //Extraer parametros de la url
 //1.- Guardamos la url en una variable
 const url = window.location.href
@@ -6,12 +8,6 @@ const params = new URLSearchParams(new URL(url).search)
 //3.- Extraemos el parametro que deseamos
 let productKey = params.get("productKey")
 console.log(productKey)
-
-const fetchProductByKey = async (productKey) => {
-    let response = await fetch(`https://javascript33g-cd62a-default-rtdb.firebaseio.com/Products/${productKey}/.json`)
-    let data = await response.json()
-    return data
-}
 
 const printProductData = async (productKey) => {
     let productData = await fetchProductByKey(productKey)
